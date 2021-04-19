@@ -18,7 +18,7 @@ if ($password == "善鼎") {
     if (isset($_GET["market"])) {
         $market = $_GET["market"];
     } else {
-        $market = "LINK/USDT";
+        $market = "LINKUSDT";
     }
 
     $url = 'https://api.binance.com';
