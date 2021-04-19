@@ -37,10 +37,8 @@ if ($password == "善鼎") {
         {
             $data = json_encode((array)$response->price);
         }else{
-            var_dump(is_numeric($data));
             $data = json_encode("請稍後再試!");
         }
-        return $data;
     } catch (Exception $e) {
         $data = json_encode("發生未知的錯誤：" . $e);
     }
