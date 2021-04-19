@@ -34,7 +34,7 @@ if ($password == "善鼎") {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);
         curl_close($ch);
-        //$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         //$data = json_decode($response);
         var_dump($response);
 //        var_dump($data);
