@@ -41,4 +41,4 @@ if ($password == "善鼎") {
 } else {
     $data = ['error' => '密碼錯誤'];
 }
-return json_encode($data);
+echo json_encode($data);
