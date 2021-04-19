@@ -30,7 +30,7 @@ if ($password == "善鼎") {
 
     try {
         $response = json_decode(file_get_contents($url_all));
-        var_dump($response->price);
+        $response->price = (int)$response->price;
         $data = json_encode((array)$response->price);
     } catch (Exception $e) {
         $data = json_encode("發生未知的錯誤：" . $e);
