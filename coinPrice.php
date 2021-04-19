@@ -31,18 +31,18 @@ if ($password == "善鼎") {
 
     try {
         $response = json_decode(file_get_contents($url_all));
-        $response->price = (double)$response->price;
-        $data = (array)$response->price;
-        if (is_numeric($data)) {
-            $data = json_encode((array)$response->price);
-        } else {
-            $data = json_encode("請稍後再試!");
+        $data = ['price' => (double)$response->price];
+        if (!is_numeric($data)) {
+            $msg = ['error' => '密碼錯誤','price' => (double)$response->price];
+            $data = json_encode($msg);
         }
     } catch (Exception $e) {
-        $data = json_encode("發生未知的錯誤：" . $e);
+        $msg = ['error' => "發生未知的錯誤：" . $e->getMessage()];
+        $data = json_encode($msg);
     }
 } else {
-    $data = json_encode('密碼錯誤');
+    $msg = ['error' => '密碼錯誤'];
+    $data = json_encode($msg);
 }
 //var_dump($data);
 return $data;
