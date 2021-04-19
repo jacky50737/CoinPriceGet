@@ -32,6 +32,7 @@ if ($password == "善鼎") {
 
     try {
         $response = json_decode(file_get_contents($url_all));
+        var_dump($response);
         $data = json_encode($response['price']);
         header('Content-Type: application/json');
         echo $data;
