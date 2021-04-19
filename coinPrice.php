@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+header('Content-Type: application/json');
 if (isset($_GET["password"])) {
     $password = $_GET["password"];
 } else {
@@ -34,7 +35,6 @@ if ($password == "善鼎") {
         $response = json_decode(file_get_contents($url_all));
         var_dump($response->price);
         $data = json_encode((array)$response->price);
-        header('Content-Type: application/json');
         echo $data;
     } catch (Exception $e) {
         http_response_code(404);
