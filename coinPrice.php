@@ -27,23 +27,18 @@ if ($password == "善鼎") {
     $binanceApiSecret = 'YaIYBzTXEJSh5nAAFLkYR1bGDMl4mwaNfvwe3dtULr5GvLodZTHTLCRei9aRs8kT';
     $coinGet = '/api/v3/ticker/price?symbol=' . $market;
     $url_all = $url . $coinGet;
-    echo "URL：";
-    var_dump($url_all);
-    $ch = curl_init();
 
     try {
         $response = json_decode(file_get_contents($url_all));
         var_dump($response->price);
         $data = json_encode((array)$response->price);
-        echo $data;
     } catch (Exception $e) {
-        http_response_code(404);
-        return "發生未知的錯誤：" . $e;
+        $data = json_encode("發生未知的錯誤：" . $e);
+        return $data;
     }
 } else {
-    http_response_code(404);
     $data = json_encode('密碼錯誤');
-    return $data;
 }
+return $data;
 
 
