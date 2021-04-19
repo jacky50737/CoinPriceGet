@@ -37,6 +37,7 @@ if ($password == "善鼎") {
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         //$data = json_decode($response);
         var_dump($response);
+        var_dump($httpCode);
 //        var_dump($data);
 //        return $data['price'];
         return $response;
