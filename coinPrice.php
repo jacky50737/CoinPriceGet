@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 header('Content-Type: application/json');
+
 if (isset($_GET["password"])) {
     $password = $_GET["password"];
 } else {
@@ -30,13 +31,13 @@ if ($password == "善鼎") {
 
     try {
         $response = json_decode(file_get_contents($url_all));
-        var_dump($response);
+        var_dump($response->price);
         return json_encode((array)$response->price);
     } catch (Exception $e) {
         return json_encode("發生未知的錯誤：" . $e);
     }
 } else {
-    echo '密碼錯誤';
+    return json_encode('密碼錯誤');
 }
 
 
