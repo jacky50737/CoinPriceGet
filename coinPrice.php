@@ -32,20 +32,20 @@ if ($password == "善鼎") {
     try {
         $response = json_decode(file_get_contents($url_all));
         $response->price = (double)$response->price;
-        var_dump($response);
-        if(is_numeric($response->price))
+        $data = (array)$response->price;
+        if(is_numeric($data))
         {
-            return json_encode((array)$response->price);
+            $data = json_encode((array)$response->price);
         }else{
-            return json_encode("請稍後再試!");
+            var_dump(is_numeric($data));
+            $data = json_encode("請稍後再試!");
         }
-
+        return $data;
     } catch (Exception $e) {
-        return json_encode("發生未知的錯誤：" . $e);
+        $data = json_encode("發生未知的錯誤：" . $e);
     }
 } else {
-    return json_encode('密碼錯誤');
+    $data = json_encode('密碼錯誤');
 }
 
-
-
+return $data;
