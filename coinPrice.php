@@ -26,7 +26,7 @@ if ($password == "善鼎") {
     $binanceApiSecret = 'YaIYBzTXEJSh5nAAFLkYR1bGDMl4mwaNfvwe3dtULr5GvLodZTHTLCRei9aRs8kT';
     $coinGet = '/api/v3/ticker/price?symbol=' . $market;
     $url_all = $url . $coinGet;
-
+    var_dump($url_all);
     $ch = curl_init();
 
     try {
