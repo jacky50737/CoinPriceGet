@@ -32,7 +32,7 @@ if ($password == "善鼎") {
 
     try {
         $response = json_decode(file_get_contents($url_all));
-        echo $response;
+        var_dump($response);
         return $response;
     } catch (Exception $e) {
         var_dump($e);
