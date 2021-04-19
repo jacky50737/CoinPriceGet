@@ -32,6 +32,7 @@ if ($password == "善鼎") {
     try {
         $response = json_decode(file_get_contents($url_all));
         $response->price = (double)$response->price;
+        var_dump($response);
         if(is_numeric($response->price))
         {
             return json_encode((array)$response->price);
