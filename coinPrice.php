@@ -45,5 +45,5 @@ if ($password == "善鼎") {
 } else {
     $data = json_encode('密碼錯誤');
 }
-
+var_dump($data);
 return $data;
