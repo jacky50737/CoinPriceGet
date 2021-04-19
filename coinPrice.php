@@ -32,9 +32,6 @@ if ($password == "善鼎") {
     try {
         $response = json_decode(file_get_contents($url_all));
         $data = ['price' => (double)$response->price];
-        if (!is_numeric($data)) {
-            $data = ['error' => '密碼錯誤','price' => (double)$response->price];
-        }
     } catch (Exception $e) {
         $data = ['error' => "發生未知的錯誤：" . $e->getMessage()];
     }
