@@ -26,6 +26,7 @@ if ($password == "善鼎") {
     $binanceApiSecret = 'YaIYBzTXEJSh5nAAFLkYR1bGDMl4mwaNfvwe3dtULr5GvLodZTHTLCRei9aRs8kT';
     $coinGet = '/api/v3/ticker/price?symbol=' . $market;
     $url_all = $url . $coinGet;
+    echo "URL：";
     var_dump($url_all);
     $ch = curl_init();
 
@@ -37,7 +38,9 @@ if ($password == "善鼎") {
         curl_close($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         //$data = json_decode($response);
+        echo "response：";
         var_dump($response);
+        echo "httpCode：";
         var_dump($httpCode);
 
 //        var_dump($data);
