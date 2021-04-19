@@ -34,9 +34,11 @@ if ($password == "善鼎") {
         $response = curl_exec($ch);
         curl_close($ch);
         //$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $data = json_decode($response);
-        var_dump($data);
-        return $data['price'];
+        //$data = json_decode($response);
+        var_dump($response);
+//        var_dump($data);
+//        return $data['price'];
+        return $response;
     } catch (Exception $e) {
         var_dump($e);
         return "發生未知的錯誤：" . $e;
