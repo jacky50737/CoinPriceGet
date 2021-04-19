@@ -31,13 +31,15 @@ if ($password == "善鼎") {
 
     try {
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);
         curl_close($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         //$data = json_decode($response);
         var_dump($response);
         var_dump($httpCode);
+
 //        var_dump($data);
 //        return $data['price'];
         return $response;
