@@ -24,8 +24,6 @@ if ($password == "善鼎") {
     }
 
     $url = 'https://api.binance.com';
-    $binanceApiKey = 'ysSQb0zgMyxsF3knmh44MS3vcqyvBpT80XKrpuk4xnRVf1a2fLiaQaER4JXSrnRt';
-    $binanceApiSecret = 'YaIYBzTXEJSh5nAAFLkYR1bGDMl4mwaNfvwe3dtULr5GvLodZTHTLCRei9aRs8kT';
     $coinGet = '/api/v3/ticker/price?symbol=' . $market;
     $url_all = $url . $coinGet;
 
